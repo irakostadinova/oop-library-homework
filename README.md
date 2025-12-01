@@ -35,15 +35,15 @@ Nema zemya by Ivan Vazov (1850) (1900) - 18.900000 lv. [ISBN-002]
 
 **Членове:**
 
-* `string name` — име на автора
-* `int birthYear` — година на раждане
+* `string name` - име на автора
+* `int birthYear` - година на раждане
 
 **Методи:**
 
-* `Author(string n, int y)` — параметризиран конструктор
-* `getName() / getBirthYear()` — връщат съответно името и годината
-* `setBirthYear(int y)` — задава година на раждане с валидация
-* `to_string()` — връща текстово представяне на информацията за автора
+* `Author(string n, int y)` - параметризиран конструктор
+* `getName() / getBirthYear()` - връщат съответно името и годината
+* `setBirthYear(int y)` - задава година на раждане с валидация
+* `to_string()` - връща текстово представяне на информацията за автора
 
 
 ### Клас Book
@@ -52,20 +52,20 @@ Nema zemya by Ivan Vazov (1850) (1900) - 18.900000 lv. [ISBN-002]
  
 **Членове:**
 
-* `string title` — заглавие
-* `Author author` — автор
-* `int year` — година на издаване
-* `double price` — цена
-* `string isbn` — идентификатор за дадена книга
-* `static int totalBooks` — брояч на всички създадени книги
+* `string title` - заглавие
+* `Author author` - автор
+* `int year` - година на издаване
+* `double price` -  цена
+* `string isbn` - идентификатор за дадена книга
+* `static int totalBooks` - брояч на всички създадени книги
 
 **Методи:**
 
 * Конструктори и деструктори
-* `getTitle() / getAuthor() / getYear() / getPrice() / getIsbn()
-setYear(int) / setPrice(double)` — с валидация
-* `to_string()` — връща текстово описание на книгата
-* `getTotalBooks()` — връща броя на създадените книги
+* `getTitle() / getAuthor() / getYear() / getPrice() / getIsbn()` - връщат заглавие / име на автора / година на издаване / цена / уникален идентификатор
+* `setYear(int) / setPrice(double)` - задава гоина на издаване / цена с валидация
+* `to_string()` - връща текстово описание на книгата
+* `getTotalBooks()` - връща броя на създадените книги
 
 
 ### Клас Member
@@ -74,17 +74,17 @@ setYear(int) / setPrice(double)` — с валидация
 
 **Членове:**
 
-* `string name` — име на читателя
-* `string memberId` — уникален идентификатор
-* `int yearJoined` — година на присъединяване
+* `string name` - име на читателя
+* `string memberId` - уникален идентификатор
+* `int yearJoined` - година на присъединяване
 
 **Методи:**
 
 * `Member()` — конструктор по подразбиране
-* `Member(string n, string id, int year)` — параметризиран конструктор
-* `getName() / getMemberId() / getYearJoined()` — връщат съответно името, ID и годината на присъединяване
-* `setName(const string&) / setMemberId(const string&) / setYearJoined(int)` — задават стойности с валидация на `memberId`
-* `to_string()` — връща текстово представяне на информацията за читателя
+* `Member(string n, string id, int year)` - параметризиран конструктор
+* `getName() / getMemberId() / getYearJoined()` - връщат името / ID / годината на присъединяване
+* `setName(const string&) / setMemberId(const string&) / setYearJoined(int)` - задават стойности, като има валидация на `memberId`
+* `to_string()` - връща текстово представяне на информацията за читателя
 
 
 ### Клас Loan
@@ -93,18 +93,18 @@ setYear(int) / setPrice(double)` — с валидация
 
 **Членове:**
 
-* `string isbn` — ISBN на книгата
-* `string memberId` — ID на читателя
-* `string startDate` — дата на заема
-* `string dueDate` — крайна дата
-* `bool returned` — статус на връщане
+* `string isbn` - ISBN на книгата
+* `string memberId` - ID на читателя
+* `string startDate` - дата на заема
+* `string dueDate` - краен срок
+* `bool returned` - статус на връщането
 
 **Методи:**
 
 * Конструктор с валидация на дати
-* `markReturned()` — отбелязва, че книгата е върната
-* `isOverdue(string today)` — проверява дали заема е проточен
-* `to_string()` — текстово представяне на информация за заема
+* `markReturned()` - отбелязва, че книгата е върната
+* `isOverdue(string today)` - проверява дали заема е проточен
+* `to_string()` - текстово представяне на информация за заема
 
 
 ### Клас Library
@@ -112,18 +112,18 @@ setYear(int) / setPrice(double)` — с валидация
 Управлява книги, читатели и заеми.
 
 **Членове:**
-* `vector<Book> books` — списък с налични книги
-* `vector<Member> members` — списък с регистрирани читатели
-* `vector<Loan> loans` — списък с активни заеми
+* `vector<Book> books` - списък с налични книги
+* `vector<Member> members` - списък с регистрирани читатели
+* `vector<Loan> loans` - списък с активни заеми
 
 **Методи:**
 * `addBook(const Book&) / addMember(const Member&)` - добавя книга / добавя читател
-* `hasBook(string isbn)` — проверява наличност
-* `isBookAvailable(string isbn)` — проверява дали дадена книга е дадена на заем
-* `loanBook(...)` — създава заем
-* `returnBook(...)` — връща книга
-* `findByAuthor(string)` — намира книги по автор
-* `to_string()` — представя обобщена информация за библиотеката
+* `hasBook(string isbn)` - проверява наличност
+* `isBookAvailable(string isbn)` - проверява дали дадена книга е дадена на заем
+* `loanBook(...)` - създава заем
+* `returnBook(...)` - връща книга
+* `findByAuthor(string)` - намира книги по автор
+* `to_string()` - представя обобщена информация за библиотеката
 
 ![Примерен изход от програмата](library_result.png)
 
